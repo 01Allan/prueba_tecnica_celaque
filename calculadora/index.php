@@ -1,18 +1,31 @@
-<?php include('db.php');?>
+<?php include('includes/db.php');?>
 
-<?php include('includes/header.php');?>
+<?php include('views/header.php');?>
 <section class="container p-4 mt-4">
 
     <div class="row d-flex justify-content-around">
 
         <div class="col mt-5">
 
-            <div class="card card-body border border-primary">
+            <?php
+                if (isset($_SESSION['message'])) {
+            ?>
+                <div class="shadow alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
+                    <?= $_SESSION['message'] ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            <?php
+                    session_unset();
+                }
+            ?>
+
+            <div class="card card-body border border-primary shadow">
                 <div class="formulario__head">
                     <h3>Ingresa los siguientes datos:</h3>
                 </div>
 
-                <form action="calcular.php" method="POST">
+                <form action="models/calcular.php" method="POST">
                     <div class="form-group mt-4">
                         <label for="montoPrestamo" class="form-label">Monto del préstamo:</label>
                         <input type="number" name="monto" id="monto" class="form-control" placeholder="Ingrese el monto del préstamo" autofocus require>
@@ -20,7 +33,7 @@
 
                     <div class="form-group mt-4">
                         <label for="tasa" class="form-label">Tasa de interés anual (%):</label>
-                        <input type="number" name="tasa" id="tasa" class="form-control" placeholder="Tasa de interés" autofocus require>
+                        <input type="number" name="tasa" id="tasa" step="0.01" class="form-control" placeholder="Tasa de interés" autofocus require>
                     </div>
 
                     <div class="form-group mt-4">
@@ -38,7 +51,10 @@
         </div>
 
         <div class="col mt-5 text-center">
-            <table class="table table-bordered border border-primary">
+            <div class="titulo">
+                <h3 class="card-title mb-4 w-50 bg-warning text-white rounded-pill">Resultados</h3>
+            </div>
+            <table class="shadow-lg table table-bordered border border-primary">
                 <thead>
                     <tr>
                     <th scope="col">Cuota Mensual</th>
@@ -47,7 +63,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $query = "SELECT * FROM calc_data.prestamos";
+                        $resultcal = mysqli_query($conexion, $query);
 
+                        while ($row = mysqli_fetch_array($resultcal)) { 
+                    ?>
+                            <tr>
+                                <td><?php echo "L ", $row['cuota_mensual']?></td>
+                                <td><?php echo $row['plazo_meses']?></td>
+                                <td>
+                                    <a class="btn btn-primary" href="controllers/edit.php?id=<?php echo $row['id'] ?>">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+
+                                    <a class="btn btn-danger" href="controllers/delete.php?id=<?php echo $row['id'] ?>">
+                                        <i class="bi bi-trash2-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                    
+                    <?php
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -55,5 +93,5 @@
 
 </section>
 
-<?php include('includes/footer.php');?>
+<?php include('views/footer.php');?>
 

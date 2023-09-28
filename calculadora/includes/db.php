@@ -6,7 +6,7 @@
         'localhost',
         'root',
         'Fisica2015.',
-        'appcrud'
+        'calc_data'
     );
 
 ?>

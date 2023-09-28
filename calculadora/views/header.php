@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-primary bg-primary">
         <div class="container">
-            <a href="index.php" class="navbar-brand text-white">
+            <a href="../index.php" class="navbar-brand text-white">
                 Calculadora De Cuota Mensual
                 <i class="bi bi-calculator-fill"></i> 
                 <i class="bi bi-bar-chart-line-fill"></i>
