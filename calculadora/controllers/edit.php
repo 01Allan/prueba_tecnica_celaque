@@ -19,7 +19,7 @@
     if (isset($_POST['update'])) {
         $id = $_GET['id'];
         $monto = $_POST['monto'];
-        $tasa = $_POST['tasa_anual'];
+        $tasa = $_POST['tasa'];
         $plazo = $_POST['plazo'];
 
         $query = "UPDATE prestamos set monto = '$monto', tasa_anual = '$tasa', plazo_meses = '$plazo' WHERE id=$id";
@@ -58,7 +58,7 @@
             </div>
                         
             <div class="text-center">
-                <button type="submit" class="btn btn-primary w-50 mt-4" name="Update" value="Update">Actualizar</button>
+                <button type="submit" class="btn btn-primary w-50 mt-4" name="update" value="update">Actualizar</button>
             </div>
 
         </form>                    
