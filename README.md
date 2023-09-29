@@ -6,7 +6,7 @@
 
 copie y pegue en su navegador web de escritorio o del celular el siguiente enlace: 
 
-pruebatecnicaphp.kesug.com
+http://pruebatecnicaphp.kesug.com/index.php
 
 si no funciona el link, me lo hacen saber.
 
