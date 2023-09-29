@@ -79,7 +79,8 @@ Tenga en cuenta que cada parámetro significa lo siguiente:
 * 'clave123.': Es la contraseña del usuario de la base de datos, debe modificar este dato con la clave de *root* que estableció en su servidor local.
 * 'calc_data': Es el nombre de la base de datos a la que se está conectando. 
 
-Luego ya configurado esto, inicialice su servidor apache o el que sea de su preferencia, en su navegador vaya a la dirección:
+Luego ya configurado esto, inicialice su servidor apache o el que sea de su preferencia. 
+En su navegador vaya a la dirección:
 
 ```
 localhost
@@ -87,7 +88,7 @@ localhost
 En caso de que no tenga instalado Apache ni otro programa similar, pero si tiene instalado PHP en su ordenador, siga los siguientes pasos:
 
 1. Ingrese a la carpeta contenedora del proyecto y vaya a la carpeta llamada *calculadora*.
-2. Abra su terminal/simbolo del sistema de windows en la carpteta *calculadora*.
+2. Abra su terminal/simbolo del sistema de windows en la carpeta *calculadora*.
 3. En el terminal escriba lo siguiente:
    ```
      php -S localhost:8000
@@ -101,7 +102,8 @@ Le aparecerá en su terminal lo siguiente:
 ```
 http://localhost:8000
 ```
-verá el proyecto en funcionamiento cuya vista es la siguiente:
+verá el proyecto en funcionamiento, cuya vista es la siguiente:
+
 ![image](https://github.com/01Allan/prueba_tecnica_celaque/assets/92226659/330e9569-5318-4574-8173-ad96f944cd41)
 
 ### Funciones del proyecto:
@@ -120,7 +122,7 @@ Donde:
 
 * $n$: Número de cuotas (plazo en meses).
 
-Luego, se agregan a una tabla llamada *Resultados*, su vista es la siguiente:
+Al llenar los datos del formulario, se agregan a una tabla llamada *Resultados*, su vista es la siguiente:
 
 ![image](https://github.com/01Allan/prueba_tecnica_celaque/assets/92226659/d61a0ba2-dd14-4771-98c9-121c88b7dbfc)
 
@@ -130,15 +132,18 @@ En dicha tabla se almacenan los siguientes datos:
 * Cuota Mensual, cuyo cálculo se hace con la formula presentada anteriormente. 
 * Cantidad de meses que deberá pagar el préstamo.
 * Acciones: En dicho campo hay dos opciones; una es editar, que lo llevará a otra página a editar los parámetros ingresados, como se muestra a continuación:
+  
   ![image](https://github.com/01Allan/prueba_tecnica_celaque/assets/92226659/36b761d6-0134-4e40-8372-f633fbeb573a)
 
   Una vez actualizados los valores se muestra una alerta como la siguiente:
+  
   ![image](https://github.com/01Allan/prueba_tecnica_celaque/assets/92226659/77cd0d15-a34f-4051-a65d-6b470afc20a9)
   
   Otra opción de la columna de acciones es la de borrar la fila de parámetros ingresados, como se muestra a continuación:
+  
   ![image](https://github.com/01Allan/prueba_tecnica_celaque/assets/92226659/068d1834-fb39-42fd-b6c0-bb12b2e8a4ec)
 
-  como puede observar que igual lanza una alerta cuando se borra una fila de la tabla.
+  como puede observar que al igual cuando se editan los valores, lanza una alerta cuando se borra una fila de la tabla.
 
 Puede experimentar las funcionalidades del proyecto usted mismo interactuando con él en su servidor local. 
 
