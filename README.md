@@ -8,6 +8,8 @@ web: http://pruebatecnicaphp.kesug.com/index.php
 
 si no funciona el link, me lo hacen saber.
 
+#### Si gusta probar la web de manera local siga los siguientes pasos:
+
 Clone usando *git* este repositorio en alguna carpeta de su computadora, de la siguiente manera:
 
 ```
