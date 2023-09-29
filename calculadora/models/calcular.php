@@ -16,7 +16,7 @@
             $cuota = ($monto * $tasaMensual * pow(1 + $tasaMensual, $plazo)) / (pow(1 + $tasaMensual, $plazo) - 1);
 
             // llenando la base de datos
-            $query = "INSERT INTO prestamos(monto, plazo_meses, tasa_anual, cuota_mensual) VALUES ($monto, $tasa, $plazo, $cuota)";
+            $query = "INSERT INTO prestamos(monto, tasa_anual, plazo_meses, cuota_mensual) VALUES ($monto, $tasa, $plazo, $cuota)";
 
             $result = mysqli_query($conexion, $query);
 

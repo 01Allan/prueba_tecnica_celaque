@@ -1,12 +1,9 @@
-<?php
-
+<?php 
     session_start();
-
     $conexion = mysqli_connect(
         'localhost',
         'root',
-        'Fisica2015.',
+        'clave123.',
         'calc_data'
     );
-
 ?>

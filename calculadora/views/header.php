@@ -6,14 +6,28 @@
     <title>Prueba Técnica</title>
     <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.RKb_GnPr6GG72Vx5OiWY1QAAAA?pid=ImgDet&rs=1" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="assets/css/style.css">s -->
+    <link rel="stylesheet" href="../includes/assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .resultados {
+            overflow: auto;
+            height: 500px;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #0068FF;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar navbar-primary bg-primary">
-        <div class="container">
+        <div class="container text-cemter d-flex justify-content-center">
             <a href="../index.php" class="navbar-brand text-white">
                 Calculadora De Cuota Mensual
                 <i class="bi bi-calculator-fill"></i> 

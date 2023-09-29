@@ -50,44 +50,53 @@
             
         </div>
 
-        <div class="col mt-5 text-center">
-            <div class="titulo">
-                <h3 class="card-title mb-4 w-50 bg-warning text-white rounded-pill">Resultados</h3>
+        <div class="col mt-5 text-center rounded-3">
+            <div class="titulo text-center">
+                <h3 class="card-title mb-4 w-100 bg-warning text-white rounded-pill">Resultados</h3>
             </div>
-            <table class="shadow-lg table table-bordered border border-primary">
-                <thead>
-                    <tr>
-                    <th scope="col">Cuota Mensual</th>
-                    <th scope="col">Total de meses</th>
-                    <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $query = "SELECT * FROM calc_data.prestamos";
-                        $resultcal = mysqli_query($conexion, $query);
 
-                        while ($row = mysqli_fetch_array($resultcal)) { 
-                    ?>
-                            <tr>
-                                <td><?php echo "L ", $row['cuota_mensual']?></td>
-                                <td><?php echo $row['plazo_meses']?></td>
-                                <td>
-                                    <a class="btn btn-primary" href="controllers/edit.php?id=<?php echo $row['id'] ?>">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
+            <div class="resultados">
+                <table class="shadow-lg table table-bordered border border-primary rounded-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Monto (L)</th>
+                            <th scope="col">Interes (%)</th>
+                            <th scope="col">Cuota Mensual (L)</th>
+                            <th scope="col">Total de meses</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $query = "SELECT * FROM prestamos";
+                            $resultcal = mysqli_query($conexion, $query);
 
-                                    <a class="btn btn-danger" href="controllers/delete.php?id=<?php echo $row['id'] ?>">
-                                        <i class="bi bi-trash2-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                    
-                    <?php
-                        }
-                    ?>
-                </tbody>
-            </table>
+                            while ($row = mysqli_fetch_array($resultcal)) { 
+                        ?>
+                                <tr>
+                                    <td><?php echo $row['monto']?></td>
+                                    <td><?php echo $row['tasa_anual']?></td>
+                                    <td><?php echo $row['cuota_mensual']?></td>
+                                    <td><?php echo $row['plazo_meses']?></td>
+                                    <td class="">
+                                        <a class="btn btn-outline-primary" href="controllers/edit.php?id=<?php echo $row['id'] ?>">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <br>
+                                        <br>
+                                        <a class="btn btn-outline-danger" href="controllers/delete.php?id=<?php echo $row['id'] ?>">
+                                            <i class="bi bi-trash2-fill"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                        
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     </div>
 

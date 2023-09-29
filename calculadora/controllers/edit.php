@@ -21,11 +21,17 @@
         $monto = $_POST['monto'];
         $tasa = $_POST['tasa'];
         $plazo = $_POST['plazo'];
+        // se vuelve a recalcular el valor de la cuota con los nuevos datos:
 
-        $query = "UPDATE prestamos set monto = '$monto', tasa_anual = '$tasa', plazo_meses = '$plazo' WHERE id=$id";
+        $tasaMensual = ($tasa / 12) / 100;
+        $cuota = ($monto * $tasaMensual * pow(1 + $tasaMensual, $plazo)) / (pow(1 + $tasaMensual, $plazo) - 1);
+
+        $query = "UPDATE prestamos set monto = '$monto', tasa_anual = '$tasa', plazo_meses = '$plazo', cuota_mensual = '$cuota'  WHERE id=$id";
+
         mysqli_query($conexion, $query);
+        
 
-        $_SESSION['message'] = 'Los valores han sido añadidos con éxito';
+        $_SESSION['message'] = '¡Los valores han sido actualizados con éxito! :D';
         $_SESSION['message_type'] = 'warning';
 
         header('Location: ../index.php');
@@ -36,7 +42,7 @@
 
 <?php include('../views/header.php'); ?>
 
-<div class="container d-flex justify-content-center w-25">
+<div class="container d-flex justify-content-center col-md-5">
     <div class="card card-body border border-primary shadow mt-5">
         <div class="formulario__head">
             <h3>Actualiza los siguientes datos:</h3>
