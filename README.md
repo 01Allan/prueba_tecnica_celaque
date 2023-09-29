@@ -4,7 +4,9 @@
 
 *Nota: Me tomé la libertad de subir mi proyecto a un hosting gratuito, dejo el link por si quieren probar la webapp:*
 
-web: pruebatecnicaphp.kesug.com
+copie y pegue en su navegador web de escritorio o del celular el siguiente enlace: 
+
+pruebatecnicaphp.kesug.com
 
 si no funciona el link, me lo hacen saber.
 
