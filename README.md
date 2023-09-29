@@ -2,6 +2,10 @@
 
 ## Instrucciones de uso
 
+Nota: Me tomé la libertad de subir mi proyecto a un hosting gratuito, dejo el link por si quieren probar la webapp:
+web: http://pruebatecnicaphp.kesug.com/index.php
+si no funciona el link, me lo hacen saber.
+
 Clone usando *git* este repositorio en alguna carpeta de su computadora, de la siguiente manera:
 
 ```
